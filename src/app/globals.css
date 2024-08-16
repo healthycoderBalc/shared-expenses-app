@@ -17,6 +17,8 @@
 }
 
 body {
+  margin-top: 50px;
+  margin-inline: 100px;
   color: rgb(var(--foreground-rgb));
   background: linear-gradient(
       to bottom,
