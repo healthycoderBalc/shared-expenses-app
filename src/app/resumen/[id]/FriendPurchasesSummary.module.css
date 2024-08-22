@@ -1,0 +1,64 @@
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.section {
+  margin-bottom: 20px;
+  padding: 10px;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.section:last-of-type {
+  border-bottom: none;
+}
+
+.sectionTitle {
+  font-size: 18px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.purchaseItem {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 0;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.purchaseItem:last-of-type {
+  border-bottom: none;
+}
+
+.purchaseConcept {
+  font-size: 16px;
+  color: #555;
+}
+
+.purchaseAmount {
+  font-size: 16px;
+  color: #007bff;
+}
+
+.debtAmountGreen {
+  text-align: right;
+  color: green;
+  font-weight: bold;
+}
+
+.debtAmountRed {
+  text-align: right;
+  color: red;
+  font-weight: bold;
+}
+
+.totalRow {
+  font-size: 18px;
+  font-weight: bolder;
+  background-color: #eef;
+}

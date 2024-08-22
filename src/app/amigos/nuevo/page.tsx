@@ -7,7 +7,7 @@ const NuevoAmigo = () => {
     } catch (err: any) {}
   }, []);
 
-  return <div>NuevoAmigo</div>;
+  return <div>NuevoAmigo</div>; // to be decided
 };
 
 export default NuevoAmigo;

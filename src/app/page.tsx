@@ -6,7 +6,7 @@ export default function Home() {
     <>
       <AppTitle />
       <br />
-      <FriendButtons />
+      <FriendButtons route="/gasto" />
     </>
   );
 }

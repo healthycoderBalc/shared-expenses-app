@@ -1,16 +1,25 @@
 import React from "react";
-import IMFriend from "../../models/Friend/Friend";
 import Link from "next/link";
-import styles from "./FriendButton.module.css";
+import IMUserFriend from "@/app/models/Friend/Friend";
+import styles from "@/app/components/FriendButton/FriendButton.module.css";
+import Image from "next/image";
 
 interface IMFriendButtonProps {
-  friendName: string;
+  userFriend: IMUserFriend;
+  route: string;
 }
 
-const FriendButton: React.FC<IMFriendButtonProps> = ({ friendName }) => {
+const FriendButton: React.FC<IMFriendButtonProps> = ({ userFriend, route }) => {
   return (
-    <Link href={"/gasto"}>
-      <div>{friendName}</div>
+    <Link href={`${route}/${userFriend.id}`} className={styles.button}>
+      <div className={styles.friendName}>{userFriend.friend.name}</div>
+      <Image
+        src="/apple-touch-icon.png"
+        alt="img"
+        className={styles.friendImage}
+        width="50"
+        height={50}
+      />
     </Link>
   );
 };

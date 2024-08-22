@@ -3,7 +3,7 @@ import { api } from "../../../services/api";
 import IMFriend from "../models/Friend/Friend";
 
 export const useLoadUserFriends = () => {
-  const [userFriends, setUserFriends] = useState<IMFriend[]>();
+  const [userFriends, setUserFriends] = useState<IMFriend[] | null>();
   const loadUserFriends = useCallback(async () => {
     try {
       const response = await api.get(`user-friends/mine`);
@@ -16,7 +16,7 @@ export const useLoadUserFriends = () => {
 
   useEffect(() => {
     loadUserFriends();
-  }, []);
+  }, [loadUserFriends]);
 
   return {
     userFriends,

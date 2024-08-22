@@ -2,15 +2,12 @@
 import Link from "next/link";
 import styles from "./Navigation.module.css";
 import { useAuth } from "@/app/context/AuthContext";
+import router from "next/router";
 
 const links = [
   {
     label: "Home",
     route: "/",
-  },
-  {
-    label: "Gasto",
-    route: "/gasto",
   },
   {
     label: "Resumen",
@@ -19,7 +16,8 @@ const links = [
 ];
 
 const Navigation = () => {
-  const { user } = useAuth();
+  const { user, logout } = useAuth();
+
   return (
     <header className={styles.header}>
       <nav className={styles.navigation}>
@@ -30,7 +28,20 @@ const Navigation = () => {
             </span>
           ))}
         </div>
-        <span className={styles.greeting}>¡Hola {user.name}!</span>
+        {user ? (
+          <>
+            <span className={`${styles.links} ms-2`}>
+              <Link onClick={logout} href={"/salir"}>
+                Salir
+              </Link>
+            </span>
+            <span className={styles.greeting}>{user.name}</span>
+          </>
+        ) : (
+          <span className={styles.greeting}>
+            <Link href="/login">Login</Link>
+          </span>
+        )}
       </nav>
     </header>
   );

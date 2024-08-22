@@ -1,7 +1,8 @@
 import React from "react";
+import FriendButtons from "../components/FriendButtons/FriendButtons";
 
 const Resumen = () => {
-  return <div>Esta es la página para ver el resumen de gastos con X amigo</div>;
+  return <FriendButtons route="/resumen" />;
 };
 
 export default Resumen;
